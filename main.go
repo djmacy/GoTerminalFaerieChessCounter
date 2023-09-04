@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func checkForRankII(piece int) {
@@ -11,6 +12,7 @@ func checkForRankII(piece int) {
 }
 
 func main() {
+	//:= allows me to declare and assign the variable
 	run := true
 
 	for run {
@@ -26,7 +28,9 @@ func main() {
 		for chooseDiff {
 			var difficulty string
 			fmt.Println("\nWhat difficulty are you playing on:")
+			//allows for the input to be assigned as the difficulty variable assigned earlier
 			fmt.Scan(&difficulty)
+			difficulty = strings.ToUpper(difficulty)
 
 			if difficulty == "B" {
 				fmt.Println("Great you will play with 60 - 65 points")
@@ -154,8 +158,9 @@ func main() {
 			classicalLimit := 2
 
 			var rook, knight, bishop, catapult, chamberlain, courtesan, herald, inquisitor, lancer, pontiff, thief, tower int
+			var userInput string
 
-			fmt.Println("How many rooks would you like: ")
+			fmt.Println("\nHow many rooks would you like: ")
 			fmt.Scan(&rook)
 			if rook > classicalLimit || rook < 0 {
 				fmt.Println("Invalid input. Please select between 0 and", classicalLimit, "rooks.")
@@ -187,105 +192,160 @@ func main() {
 				break
 			}
 
-			fmt.Println("\nFor the rest of these insert 0 for no and 1 for yes")
+			fmt.Println("\nFor the rest of these insert y for yes and n for no")
 
 			fmt.Println("Would you like a catapult: ")
-			fmt.Scan(&catapult)
-			checkForRankII(catapult)
-			totalPoints += catapult * catapultValue
-			rank2 += catapult
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				catapult = 1
+				checkForRankII(catapult)
+				totalPoints += catapult * catapultValue
+				rank2 += catapult
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a chamberlain: ")
-			fmt.Scan(&chamberlain)
-			checkForRankII(chamberlain)
-			totalPoints += chamberlain * chamberlainValue
-			rank2 += chamberlain
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				chamberlain = 1
+				checkForRankII(chamberlain)
+				totalPoints += chamberlain * chamberlainValue
+				rank2 += chamberlain
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a courtesan: ")
-			fmt.Scan(&courtesan)
-			checkForRankII(courtesan)
-			totalPoints += courtesan * courtesanValue
-			rank2 += courtesan
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				courtesan = 1
+				checkForRankII(courtesan)
+				totalPoints += courtesan * courtesanValue
+				rank2 += courtesan
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a herald: ")
-			fmt.Scan(&herald)
-			checkForRankII(herald)
-			totalPoints += herald * heraldValue
-			rank2 += herald
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				herald = 1
+				checkForRankII(herald)
+				totalPoints += herald * heraldValue
+				rank2 += herald
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
-			fmt.Println("Would you like an inquisitor: ")
-			fmt.Scan(&inquisitor)
-			checkForRankII(inquisitor)
-			totalPoints += inquisitor * inquisitorValue
-			rank2 += inquisitor
-
+			fmt.Println("Would you like a inquisitor: ")
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				inquisitor = 1
+				checkForRankII(inquisitor)
+				totalPoints += inquisitor * inquisitorValue
+				rank2 += inquisitor
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a lancer: ")
-			fmt.Scan(&lancer)
-			checkForRankII(lancer)
-			totalPoints += lancer * lancerValue
-			rank2 += lancer
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				lancer = 1
+				checkForRankII(lancer)
+				totalPoints += lancer * lancerValue
+				rank2 += lancer
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a pontiff: ")
-			fmt.Scan(&pontiff)
-			checkForRankII(pontiff)
-			totalPoints += pontiff * pontiffValue
-			rank2 += pontiff
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				pontiff = 1
+				checkForRankII(pontiff)
+				totalPoints += pontiff * pontiffValue
+				rank2 += pontiff
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
-
 			fmt.Println("Would you like a thief: ")
-			fmt.Scan(&thief)
-			checkForRankII(thief)
-			totalPoints += thief * thiefValue
-			rank2 += thief
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				thief = 1
+				checkForRankII(thief)
+				totalPoints += thief * thiefValue
+				rank2 += thief
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
 			}
 
 			fmt.Println("Would you like a tower: ")
-			fmt.Scan(&tower)
-			checkForRankII(tower)
-			totalPoints += tower * towerValue
-			rank2 += tower
-
+			fmt.Scan(&userInput)
+			if userInput == "y" {
+				catapult = 1
+				checkForRankII(tower)
+				totalPoints += tower * towerValue
+				rank2 += tower
+			} else if userInput != "n" && userInput != "y" {
+				rank2 = 0
+				println("please insert a valid value: y or n")
+				continue
+			}
 			if rank2 == 6 {
 				doneSelecting = true
 				break
+			} else {
+				println("You only selected ", rank2, " pieces. Be sure to select 6 rank II pieces\nThe count will now reset")
 			}
 		}
 
@@ -304,24 +364,25 @@ func main() {
 			regentValue := 15
 
 			var queen, king int
+			var userInput string
 
-			fmt.Println("Enter 0 for no and 1 to yes")
+			fmt.Println("Enter y for yes and n to no")
 			fmt.Println("Would you like a queen: ")
-			fmt.Scan(&queen)
+			fmt.Scan(&userInput)
 
-			if queen > 1 || queen < 0 {
-				fmt.Println("Please insert 0 or 1")
-				continue
-			} else if queen == 1 {
+			if userInput == "y" {
+				queen = 1
 				totalPoints += queen * queenValue
-				rank3 += queen
+			} else if userInput != "n" && userInput != "y" {
+				rank3 = 0
+				println("please insert a valid value: y or n")
 			} else {
 				fmt.Println("Since you did not select a queen you automatically get a jester")
 				jester := 1
 				totalPoints += jester * jesterValue
 			}
 
-			if 70-totalPoints <= regentValue {
+			if maxPoints-totalPoints <= regentValue {
 				fmt.Println("You do not have enough points for a regent so you will have to get a king.")
 				king = 1
 				totalPoints += king * kingValue
@@ -330,15 +391,15 @@ func main() {
 			}
 
 			fmt.Println("Would you like a king: ")
-			fmt.Scan(&king)
+			fmt.Scan(&userInput)
 
-			if king > 1 || king < 0 {
-				fmt.Println("Please insert 0 or 1")
-				continue
-			} else if king == 1 {
+			if userInput == "y" {
+				king = 1
 				totalPoints += king * kingValue
-				rank3 += king
-				break
+			} else if userInput != "n" && userInput != "y" {
+				rank3 = 0
+				println("please insert a valid value: y or n")
+				continue
 			} else {
 				fmt.Println("Since you did not select a king you automatically get a regent")
 				regent := 1
